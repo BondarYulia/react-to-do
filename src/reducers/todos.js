@@ -6,7 +6,8 @@ const todos = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: false
+          completed: false,
+          inprogress: false
         }
       ]
     case 'TOGGLE_TODO':
@@ -21,6 +22,11 @@ const todos = (state = [], action) => {
           ? {...todo, inprogress: !todo.inprogress}
           : todo
       )
+      // case 'REMOVE':
+      // return [
+      //   console.log('removed')
+      // ]
+      
     default:
       return state
   }
